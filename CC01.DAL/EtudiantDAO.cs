@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +20,7 @@ namespace CC01.DAL
         public  EtudiantDAO (string dbFolder)
         {
             this.dbFolder = dbFolder;
+
             file = new FileInfo(Path.Combine(this.dbFolder, FILE_NAME));
 
             if (!file.Directory.Exists)
@@ -32,42 +34,46 @@ namespace CC01.DAL
             }
             if (file.Length > 0)
             {
-                using (StreamReader sr = new StreamReader(file.FullName))
+                using (StreamReader sr = new StreamReader(file.FullName,false))
                 {
                     string json = sr.ReadToEnd();
                  etudiants = JsonConvert.DeserializeObject<List<Etudiant>>(json);
                 }
             }
-            else
+            if(etudiants == null)
             {
                 etudiants = new List<Etudiant>();
             }
         }
 
-        public void Set(Etudiant oldproduct, Etudiant newProduct)
+        public void Set(Etudiant oldetudiant, Etudiant newetuudiant)
         {
-            var oldIndex = etudiants.IndexOf(oldproduct);
-            var newIndex = etudiants.IndexOf(newProduct);
+            var oldIndex = etudiants.IndexOf(oldetudiant);
+            var newIndex = etudiants.IndexOf(newetuudiant);
+
             if (oldIndex < 0)
                 throw new KeyNotFoundException("this Etudiant doesn't exist !");
+
             if (newIndex >= 0 && oldIndex != newIndex)
                 throw new DuplicateWaitObjectException("this Etudiant reference already exists!");
-            etudiants[oldIndex] = newProduct;
+
+            etudiants[oldIndex] = newetuudiant;
             Save();
         }
 
-        public void Add(Etudiant product)
+        public void Add(Etudiant etudiant)
         {
-            var index = etudiants.IndexOf(product);
+            var index = etudiants.IndexOf(etudiant);
             if (index >= 0)
                 throw new DuplicateWaitObjectException("l'etudiant existe deja");
-            etudiants.Add(product);
+
+            etudiants.Add(etudiant);
             Save();
         }
 
         private void Save()
         {
-            using (StreamWriter sw = new StreamWriter(file.FullName))
+            using (StreamWriter sw = new StreamWriter(file.FullName,false))
             {
                 string json = JsonConvert.SerializeObject(etudiants);
                 sw.WriteLine(json);

@@ -15,7 +15,7 @@ namespace CC01.BLL
             {
                 sw.WriteLine
                 (
-                    $"{DateTime.Now}\n{ex}\n"
+                    $"/n{DateTime.Now} \n {ex}\n"
                 );
             }
         }
