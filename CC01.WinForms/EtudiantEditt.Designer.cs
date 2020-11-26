@@ -263,18 +263,24 @@
             // 
             // pcbCodeqr
             // 
+            this.pcbCodeqr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcbCodeqr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbCodeqr.Location = new System.Drawing.Point(684, 564);
             this.pcbCodeqr.Name = "pcbCodeqr";
             this.pcbCodeqr.Size = new System.Drawing.Size(101, 72);
+            this.pcbCodeqr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbCodeqr.TabIndex = 25;
             this.pcbCodeqr.TabStop = false;
             this.pcbCodeqr.Click += new System.EventHandler(this.pcbCodeqr_Click);
             // 
             // pcbimage
             // 
+            this.pcbimage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcbimage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbimage.Location = new System.Drawing.Point(865, 115);
             this.pcbimage.Name = "pcbimage";
             this.pcbimage.Size = new System.Drawing.Size(324, 275);
+            this.pcbimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbimage.TabIndex = 26;
             this.pcbimage.TabStop = false;
             this.pcbimage.Click += new System.EventHandler(this.pcbimage_Click);

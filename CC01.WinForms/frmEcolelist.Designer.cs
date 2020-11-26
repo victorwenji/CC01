@@ -156,21 +156,21 @@
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "Reference";
+            this.Column5.DataPropertyName = "Nom_ecole";
             this.Column5.HeaderText = "nom de l\'ecole";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "UniversityName";
+            this.Column1.DataPropertyName = "date_de_creation";
             this.Column1.HeaderText = "date de creation";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "lieu";
+            this.Column2.DataPropertyName = "Lieu";
             this.Column2.HeaderText = "lieu";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -178,13 +178,13 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "Contact";
-            this.Column3.HeaderText = "Lieu";
+            this.Column3.HeaderText = "contact";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "Contact";
+            this.Column4.DataPropertyName = "BP";
             this.Column4.HeaderText = "BP";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;

@@ -16,6 +16,7 @@ namespace CC01.DAL
         private const string FILE_NAME = "etudiants.json";
         private readonly string dbFolder;
         private FileInfo file;
+        private Etudiant etudiant;
 
         public  EtudiantDAO (string dbFolder)
         {
@@ -61,6 +62,11 @@ namespace CC01.DAL
             Save();
         }
 
+        public Etudiant Get()
+        {
+            return etudiant;
+        }
+
         public void Add(Etudiant etudiant)
         {
             var index = etudiants.IndexOf(etudiant);
@@ -73,7 +79,7 @@ namespace CC01.DAL
 
         private void Save()
         {
-            using (StreamWriter sw = new StreamWriter(file.FullName,false))
+            using (StreamWriter sw = new StreamWriter(file.FullName))
             {
                 string json = JsonConvert.SerializeObject(etudiants);
                 sw.WriteLine(json);

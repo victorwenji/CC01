@@ -48,6 +48,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmPrevieuw";
             this.Text = "FrmPrevieuw";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPrevieuw_Load);
             this.ResumeLayout(false);
 

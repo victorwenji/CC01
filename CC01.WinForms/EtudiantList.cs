@@ -34,7 +34,7 @@ namespace CC01.WinForms
             var products = etudiantBLO.GetBy
             (
                 x =>
-                x.Identifiant.ToLower().Contains(value) ||
+                x.Identifiant.Contains(value) ||
                 x.Nom_Ettudiant.ToLower().Contains(value)
             ).OrderBy(x => x.Identifiant).ToArray();
             dataGridView1.DataSource = null;
@@ -112,7 +112,7 @@ namespace CC01.WinForms
         {
             List<EtudiantlistPrint> items = new List<EtudiantlistPrint>();
 
-            Etudiant etudiant = EtudiantBLO.Getetudiant();
+            Etudiant etudiant = etudiantBLO.Getetudiant();
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {

@@ -44,9 +44,12 @@ namespace CC01.BLL
             ccrepo.Set(oldetudiant, newetudiant);
         }
 
-        public static Etudiant Getetudiant()
+        public Etudiant Getetudiant()
         {
-            throw new NotImplementedException();
+            /*throw new NotImplementedException();*/
+
+            Etudiant etudiant = ccrepo.Get();
+            return etudiant;
         }
     }
 }

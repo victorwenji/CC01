@@ -82,7 +82,7 @@ namespace CC01.DAL
 
         private void Save()
         {
-            using (StreamWriter sw = new StreamWriter(file.FullName, false))
+            using (StreamWriter sw = new StreamWriter(file.FullName))
             {
                 string json = JsonConvert.SerializeObject(ecoles);
                 sw.WriteLine(json);
